@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Editar Estudiante</title>
+</head>
+
+<body>
+
+    <div align="center">
+        <h1>Editar Estudiante</h1>
+        <form action="#" th:action="@{/estudiante/guardar}" th:object="${estudiante}" method="post">
+
+            <table border="2" cellpadding="10">
+                <tr>
+                    <td>ID Estudiante :</td>
+                    <td><input type="text" th:field="*{idEstudiante}" readonly="readonly"></td>
+                </tr>
+                
+                <tr>
+                    <td>DNI :</td>
+                    <td><input type="text" th:field="*{Estudiante_dni}" readonly="readonly"></td>
+                </tr>
+
+                <tr>
+                    <td>Primer Nombre :</td>
+                    <td><input type="text" th:field="*{primer_nombre}"></td>
+                </tr>
+
+                <tr>
+                    <td>Segundo Nombre:</td>
+                    <td><input type="text" th:field="*{segundo_nombre}"></td>
+                </tr>
+
+                <tr>
+                    <td>Apellido Paterno :</td>
+                    <td><input type="text" th:field="*{apellido_paterno}"></td>
+                </tr>
+
+                <tr>
+                    <td>Apellido Materno :</td>
+                    <td><input type="text" th:field="*{apellido_materno}"></td>
+                </tr>
+
+                <tr>
+                    <td>Fecha de Nacimiento :</td>
+                    <td><input type="text" th:field="*{fecha_nacimiento}"></td>
+                </tr>
+
+                <tr>
+                    <td>Dirección:</td>
+                    <td><textarea rows="20" cols="80" th:field="*{direccion}"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button></td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

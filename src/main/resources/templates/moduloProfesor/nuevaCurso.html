@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Crear-Nueva-Curso</title>
+</head>
+
+<body>
+
+	<div align="center">
+		<h1>Nuevo Curso</h1>
+		<form action="#" th:action="@{/Curso/guardar}" th:object="${Curso}" method="post">
+			<table border="2" cellpadding="10">
+				<tr>
+					<td>Id :</td>
+					<td><input type="text" th:field="*{idCurso}"></td>
+				</tr>
+
+				<tr>
+					<td>Curso :</td>
+					<td><input type="text" th:field="*{Curso_Nombre}"></td>
+				</tr>
+
+				<tr>
+					<td>Descripción :</td>
+					<td><input type="text" th:field="*{Curso_Descripcion}"></td>
+				</tr>
+				
+				<tr>
+					<td>Id Profesor :</td>
+					<td><input type="text" th:field="*{Profesor_id}"></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+
+			</table>
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>

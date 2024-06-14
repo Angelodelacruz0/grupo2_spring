@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Profesor</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Profesor</h1>
+        <a th:href="@{/profesor/nuevo}">Agregue un nuevo profesor</a>
+        <br/>
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>idProfesor</th>
+                    <th>Profesor_dni</th>
+                    <th>primer_nombre</th>
+                    <th>segundo_nombre</th>
+                    <th>apellido_paterno</th>
+                    <th>apellido_materno</th>
+                    <th>telefono</th>
+                    <th>correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="profesor : ${listaProfesor}">
+                    <td th:text="${profesor.idProfesor}">idProfesor</td>
+                    <td th:text="${profesor.Profesor_dni}">Profesor_dni</td>
+                    <td th:text="${profesor.primer_nombre}">primer_nombre</td>
+                    <td th:text="${profesor.segundo_nombre}">segundo_nombre</td>
+                    <td th:text="${profesor.apellido_paterno}">apellido_paterno</td>
+                    <td th:text="${profesor.apellido_materno}">apellido_materno</td>
+                    <td th:text="${profesor.telefono}">telefono</td>
+                    <td th:text="${profesor.correo}">correo</td>
+                    <td>
+                        <a th:href="@{/profesor/actualizar/{id}(id=${profesor.idProfesor})}">Actualizar</a>
+                        <a th:href="@{/profesor/eliminar/{id}(id=${profesor.idProfesor})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
